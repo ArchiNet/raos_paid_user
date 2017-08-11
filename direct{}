@@ -1,0 +1,29 @@
+{lpurl}?myid={ifmobile:1212}{ifnotmobile:3434} 
+
+
+
+{lpurl}?device={device}
+
+{lpurl}?target={target}&placement={placement}
+
+{lpurl}?creative={creative}
+
+{lpurl}?keyword={keyword}&matchtype={matchtype}
+
+{lpurl}?tracking={ifsearch:Поиск}{ifcontent:КМС}
+
+
+
+
+
+	{lpurl}?device={device}
+
+{lpurl}?target={target}&placement={placement}
+
+
+{lpurl}?creative={creative}&device={device}&tracking={ifsearch:Поиск}{ifcontent:КМС}&target={target}&placement={placement}&keyword={keyword}&matchtype={matchtype}
+
+
+{lpurl}?keyword={keyword}&matchtype={matchtype}
+
+	{lpurl}?tracking={ifsearch:Поиск}{ifcontent:КМС}

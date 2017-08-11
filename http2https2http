@@ -1,0 +1,15 @@
+V (w) И.М. vs. V (w) Р.И.П.
+
+https -> http
+
+RewriteEngine On
+RewriteCond %{SERVER_PORT} ^443$ [OR]
+RewriteCond %{HTTPS} =on
+RewriteRule ^(.*)$ http://%{SERVER_NAME}%{REQUEST_URI} [R=301,L]
+
+
+http -> https
+
+RewriteEngine On
+RewriteCond %{SERVER_PORT} !^443$
+RewriteRule .* https://%{SERVER_NAME}%{REQUEST_URI} [R=301,L]

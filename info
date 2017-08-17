@@ -25,3 +25,6 @@ https://sentry.io/pricing/ - трекинг ошибок
 http://sauron.org.ua/post/1285 - центровка по вертикали
 
 http://atmpl.ru/publ/useful_information/role_atribut_html/3-1-0-6 - div role - зачем
+
+// Вывод ссылки на текущую страницу
+echo get_page_link( get_page_by_title( PAGE_NAME )->ID );

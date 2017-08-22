@@ -1,0 +1,44 @@
+<?php
+<?php
+
+function serial_numb($sert_numb) {
+// Const
+$alfa_start = 65;
+$alfa_end = 90;
+$sert_count = 5; // Длина второй части SN 5
+// Const tmp
+$next_sert = $sert_numb; // Вторая часть серийного номера	
+$second_half = str_pad($next_sert, $sert_count, '0', STR_PAD_LEFT);
+// Добавляет нули к номеру
+$first_half = chr($alfa_start);
+// Получает символ по коду
+$ost = pow(10,$sert_count);
+// Остаток. Он же вторая часть номера
+if($next_sert > $ost) {
+list($alfa, $numb) = explode(".", $next_sert/$ost);
+settype($alfa_start, "integer");
+$set_letter = $alfa + $alfa_start;
+$result = chr($set_letter).substr($next_sert, -$sert_count, $sert_count)."<br>";
+}
+elseif($next_sert = $ost) {
+$result = $first_half.$second_half."<br>";
+}		
+	return $result;
+}
+// ALTER TABLE table AUTO_INCREMENT = 20;
+/*
+Когда 1 - присваивается новая группа пользователю
+Когда 2 - выдаётся повторно
+
+Проверка на наличие действующего сертификата
+ = Запись в таблице wp_custom_sertification:
+ 1 автоинкремент
+ 2 начальная дата
+ 3 конечная дата
+ 4 ID пользователя
+Поиск: отбор пользователей по ID, сортировка по автоинкременту, проверка вхождения в диапазон дат
+
+*/
+
+echo serial_numb(20);
+?>

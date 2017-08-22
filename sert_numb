@@ -1,5 +1,4 @@
 <?php
-<?php
 
 function serial_numb($sert_numb) {
 // Const
